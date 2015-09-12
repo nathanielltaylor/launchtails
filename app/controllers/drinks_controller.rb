@@ -7,7 +7,7 @@ class DrinksController < ApplicationController
     @drink = Drink.new(drink_params)
     if @drink.save
       flash[:notice] = 'Drink added.'
-      redirect_to '/drinks'
+      redirect_to drinks_path
     else
       render :new
     end
@@ -17,7 +17,7 @@ class DrinksController < ApplicationController
     @drink = Drink.find(params[:id])
     @drink.destroy
     flash[:notice] = 'Drink deleted.'
-    redirect_to '/drinks'
+    redirect_to drinks_path
   end
 
   def index

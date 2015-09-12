@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'featured_drinks#index'
   devise_for :users
-  resources :drinks
+  resources :drinks, except: [:update]
 
   resources "featured-drinks", :controller => :featured_drinks, :as => :featured_drinks
 
